@@ -78,7 +78,7 @@ public class Tides : MonoBehaviour
         //{
         //    tideRising = false;
 
-        //    // TODO debug code
+        //    // TODO* debug code
         //    //if (currentMinute < 10)
         //    //{
         //    //    Debug.Log("Tide changed at " + currentHour + ":0" + currentMinute);
@@ -92,7 +92,7 @@ public class Tides : MonoBehaviour
         //{
         //    tideRising = true;
 
-        //    // TODO debug code
+        //    // TODO* debug code
         //    //if (currentMinute < 10)
         //    //{
         //    //    Debug.Log("Tide changed at " + currentHour + ":0" + currentMinute);

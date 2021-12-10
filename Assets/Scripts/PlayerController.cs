@@ -7,14 +7,20 @@ public class PlayerController : MonoBehaviour
     int curSpeed;
     public int walkSpeed;
     public int runSpeed;
-    public Rigidbody rbody;
+
+    //public bool hasJumped;
+    //public float jumpForce;
+    // could implement a double jump if wanted
+
+    public Rigidbody2D rbody;
 
     void Start()
     {
         curSpeed = walkSpeed;
+        //hasJumped = false;
     }
 
-    void Update()
+    private void FixedUpdate()
     {
         if (Input.GetKey(KeyCode.LeftShift))
         {
@@ -25,26 +31,39 @@ public class PlayerController : MonoBehaviour
             curSpeed = walkSpeed;
         }
 
-        Vector3 tempVel = Vector3.zero;
-        float tempY = rbody.velocity.y;
+        //Vector3 tempVel = Vector3.zero;
+        Vector2 tempVel = Vector2.zero;
 
         if (Input.GetKey(KeyCode.W))
         {
-            tempVel += transform.forward * curSpeed;
+            tempVel.y += curSpeed;
         }
         if (Input.GetKey(KeyCode.A))
         {
-            tempVel -= transform.right * curSpeed;
+            tempVel.x -= curSpeed;
         }
         if (Input.GetKey(KeyCode.S))
         {
-            tempVel -= transform.forward * curSpeed;
+            tempVel.y -= curSpeed;
         }
         if (Input.GetKey(KeyCode.D))
         {
-            tempVel += transform.right * curSpeed;
+            tempVel.x += curSpeed;
         }
 
         rbody.velocity = tempVel;
+    }
+
+    void Update()
+    {
+        //if (Input.GetKey(KeyCode.Space) && !hasJumped)
+        //{
+        //    rbody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        //    hasJumped = true;
+        //}
+        //if(rbody.velocity.y == 0)
+        //{
+        //    hasJumped = false;
+        //}
     }
 }
