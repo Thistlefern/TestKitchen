@@ -1,0 +1,26 @@
+[UnityEditor.MenuItem("CONTEXT/TimelineAsset/Create Subtitle Track")]   // This creates an option within the context menu of a particular type of component
+                                                                            // In this example, clicking the context menu of a TimelineAsset will provide a Create Subtitle Track option
+    public static void Test0()
+    {
+
+    }
+
+[UnityEditor.MenuItem("Assets/Test")]   // This creates an option when right-clicking any asset to run the Test1 function, in the menu it will be titled 'Test'
+    public static void Test1()
+    {
+        Debug.Log("Here we go");
+    }
+
+[UnityEditor.MenuItem("Assets/Icons/Test2")] // This creates a subset of options when right-clicking any asset
+                                                    // Any MenuItems created with the same name (in this case, Icons) will be put into the same subset of options
+                                                    // In this example, right-clicking on an asset will provide the Icons option, which can be clicked on to show both Test2 and Test3 as options
+    public static void Test2()
+    {
+        Debug.Log("Here we go");
+    }
+
+[UnityEditor.MenuItem("Assets/Icons/Test3")]
+    public static void Test3()
+    {
+
+    }
